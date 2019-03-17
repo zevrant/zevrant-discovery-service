@@ -1,0 +1,24 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+    }
+}
+rootProject.name = 'zevrant-discovery-service'
+
+buildCache {
+    local(DirectoryBuildCache) {
+        enabled = false
+    }
+}
+
+buildCache {
+    remote(HttpBuildCache) {
+        url = 'https://zevrant-services:5071/'
+        allowUntrustedServer = true
+        enabled = true
+        credentials {
+            username = cacheUser
+            password = cachePassword
+        }
+    }
+}
