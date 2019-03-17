@@ -9,6 +9,7 @@ phases:
       - mkdir ~/.gradle/
       - echo cacheUser = $CACHE_USER > ~/.gradle/gradle.properties
       - echo -e cachePassword = $CACHE_PASSWORD >> ~/.gradle/gradle.properties
+      - cat ~/.gradle/gradle.properties
   build:
     commands:
       - echo Build started on `date`
