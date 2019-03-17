@@ -25,4 +25,4 @@ cache:
     
 artifacts:
   files:
-    - build/libs/zevrant-discovery-service-0.0.1.jar
+    - build/libs/zevrant-discovery-service.jar
