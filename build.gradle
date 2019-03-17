@@ -22,9 +22,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'de.codecentric:spring-boot-admin-starter-server'
-    implementation 'org.springframework.cloud:spring-cloud-starter-aws'
-    implementation 'org.springframework.cloud:spring-cloud-starter-aws-jdbc'
-    implementation 'org.springframework.cloud:spring-cloud-starter-aws-messaging'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-aws'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-aws-jdbc'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-aws-messaging'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
