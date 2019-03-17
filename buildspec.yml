@@ -18,7 +18,7 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - mv build/libs/zevrant-discovery-service-0.0.1-SNAPSHOT.jar build/libs/zevrant-discovery-service-0.0.1.jar
+      - mv build/libs/zevrant-discovery-service-0.0.1-SNAPSHOT.jar build/libs/zevrant-discovery-service.jar
 cache:
   paths:
     - '/root/.gradle/wrapper/**/*'
