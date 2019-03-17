@@ -20,6 +20,10 @@ phases:
     commands:
       - echo Build completed on `date`
       - mv build/libs/zevrant-discovery-service-0.0.1-SNAPSHOT.jar build/libs/zevrant-discovery-service-0.0.1.jar
+cache:
+  paths
+    - '/root/.gradle/wrapper/**/*'
+    
 artifacts:
   files:
     - build/libs/zevrant-discovery-service-0.0.1.jar
