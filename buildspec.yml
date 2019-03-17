@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Nothing to do in the install phase...
+  pre_build:
+    commands:
+      - mkdir ~/.gradle/
+      - echo cacheUser = $CACHE_USER > ~/.gradle/gradle.properties
+      - echo cachePassword = $CACHE_PASSWORD >> ~/.gradle/gradle.properties
+  build:
+    commands:
+      - echo Build started on `date`
+      - chmod a+x gradlew
+      - ls -la
+      - ./gradlew clean build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - mv build/libs/zevrant-discovery-service-0.0.1-SNAPSHOT.jar build/libs/zevrant-discovery-service-0.0.1.jar
+cache:
+  paths
+    - '/root/.gradle/wrapper/**/*'
+    
+artifacts:
+  files:
+    - build/libs/zevrant-discovery-service-0.0.1.jar
