@@ -3,12 +3,21 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo Nothing to do in the install phase...
+      - yum install -y yum-utils device-mapper-persistent-data lvm2
+      - yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+      - yum install docker-ce
+      - yum install epel-release
+      - yum install -y python-pip
+      - pip install docker-compose
   pre_build:
     commands:
       - mkdir ~/.gradle/
       - echo cacheUser = $CACHE_USER > ~/.gradle/gradle.properties
       - echo cachePassword = $CACHE_PASSWORD >> ~/.gradle/gradle.properties
+      - sudo usermod -aG docker $(whoami)
+      - sudo systemctl start docker.service
+      - sudo yum upgrade python*
+      - docker-compose version
   build:
     commands:
       - echo Build started on `date`
@@ -18,7 +27,8 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - mv build/libs/zevrant-discovery-service-0.0.1-SNAPSHOT.jar build/libs/zevrant-discovery-service.jar
+      - mv build/libs/zevrant-discovery-service-0.0.1-SNAPSHOT.jar build/libs/zevrant-discovery-service.jar'
+      - 
 cache:
   paths:
     - '/root/.gradle/wrapper/**/*'
