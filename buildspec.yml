@@ -5,6 +5,7 @@ phases:
     commands:
       - add-apt-repository ppa:openjdk-r/ppa
       - apt-get install openjdk-8-jdk
+      - apt-get update
       - java -version
   pre_build:
     commands:
