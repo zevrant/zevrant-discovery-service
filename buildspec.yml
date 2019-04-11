@@ -3,14 +3,14 @@ version: 0.2
 phases:
   install:
     commands:
-      - yum install -y yum-utils device-mapper-persistent-data lvm2
-      - yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-      - yum install docker-ce
-      - yum install epel-release
-      - yum install -y python-pip
-      - pip install docker-compose
+      - apt-get update
+      - add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+      - apt-get install apt-transport-https ca-certificates curl gnupg-agent software-properties-common docker-ce docker-ce-cli containerd.io
   pre_build:
     commands:
+      - curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+      - apt-key fingerprint 0EBFCD88
+      - docker run hello-world
       - mkdir ~/.gradle/
       - echo cacheUser = $CACHE_USER > ~/.gradle/gradle.properties
       - echo cachePassword = $CACHE_PASSWORD >> ~/.gradle/gradle.properties
