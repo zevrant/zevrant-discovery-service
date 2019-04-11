@@ -5,7 +5,7 @@ phases:
     commands:
       - add-apt-repository ppa:openjdk-r/ppa
       - apt-get update
-      - apt-get install -y openjdk-8-jdk
+      - apt-get install -y openjdk-8-jdk python
       - java -version
   pre_build:
     commands:
@@ -13,9 +13,6 @@ phases:
       - mkdir ~/.gradle/
       - echo cacheUser = $CACHE_USER > ~/.gradle/gradle.properties
       - echo cachePassword = $CACHE_PASSWORD >> ~/.gradle/gradle.properties
-      - sudo usermod -aG docker $(whoami)
-      - sudo systemctl start docker.service
-      - sudo yum upgrade python*
       - docker-compose version
   build:
     commands:
