@@ -14,8 +14,8 @@ phases:
       - mkdir ~/.gradle/
       - echo cacheUser = $CACHE_USER > ~/.gradle/gradle.properties
       - echo cachePassword = $CACHE_PASSWORD >> ~/.gradle/gradle.properties
-      - systemProp.javax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts
-      - systemProp.javax.net.ssl.trustStorePassword=changeit
+      - echo systemProp.javax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts >> ~/.gradle/gradle.properties
+      - echo systemProp.javax.net.ssl.trustStorePassword=changeit >> ~/.gradle/gradle.properties
       - docker-compose version
   build:
     commands:
