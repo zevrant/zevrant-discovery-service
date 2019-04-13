@@ -3,20 +3,12 @@ version: 0.2
 phases:
   install:
     commands:
-      - add-apt-repository ppa:openjdk-r/ppa
-      - apt-get update
-      - apt-get install -y openjdk-8-jdk python
-      - java -version
-      - echo $JAVA_HOME
+      - echo "no actions needed"
   pre_build:
     commands:
-      - docker run hello-world
       - mkdir ~/.gradle/
       - echo cacheUser = $CACHE_USER > ~/.gradle/gradle.properties
       - echo cachePassword = $CACHE_PASSWORD >> ~/.gradle/gradle.properties
-      - echo systemProp.javax.net.ssl.trustStore=/etc/ssl/certs/java/cacerts >> ~/.gradle/gradle.properties
-      - echo systemProp.javax.net.ssl.trustStorePassword=changeit >> ~/.gradle/gradle.properties
-      - docker-compose version
   build:
     commands:
       - echo Build started on `date`
