@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "no actions needed"
+      - echo $USER_HOME
   pre_build:
     commands:
       - mkdir ~/.gradle/
