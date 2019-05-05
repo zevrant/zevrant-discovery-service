@@ -19,7 +19,7 @@ phases:
       - echo Build started on `date`
       - chmod a+x gradlew
       - ls -la
-      - ./gradlew clean build
+      - ./gradlew clean build --info --no-daemon
       - docker build -t 725235728275.dkr.ecr.us-east-1.amazonaws.com/zevant-discovery-service .
   post_build:
     commands:
