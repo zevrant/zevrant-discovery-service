@@ -11,6 +11,7 @@ phases:
       - echo cacheUser = $CACHE_USER > ~/.gradle/gradle.properties
       - echo cachePassword = $CACHE_PASSWORD >> ~/.gradle/gradle.properties
       - DOCKER_LOGIN=`aws ecr get-login --region us-east-1 --no-include-email`; eval $DOCKER_LOGIN
+      - docker pull 725235728275.dkr.ecr.us-east-1.amazonaws.com/zevant-centos-base:latest
   build:
     commands:
       - echo Build started on `date`
