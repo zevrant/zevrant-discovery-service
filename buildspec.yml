@@ -18,12 +18,11 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - mv build/libs/zevrant-discovery-service-0.0.1-SNAPSHOT.jar build/libs/zevrant-discovery-service.jar
-      - 
+      - mv build/libs/zevrant-discovery-service-0.0.1-SNAPSHOT.jar:latest .
+      - DOCKER_LOGIN=`aws ecr get-login --region us-east-1 --no-include-email`
+      - eval $DOCKER_LOGIN
+      - docker push 725235728275.dkr.ecr.us-east-1.amazonaws.com/zevrant-discovery-service:latest
 cache:
   paths:
     - '/root/.gradle/wrapper/**/*'
     
-artifacts:
-  files:
-    - build/libs/zevrant-discovery-service.jar
