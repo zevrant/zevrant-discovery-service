@@ -8,6 +8,7 @@ phases:
       - add-apt-repository ppa:openjdk-r/ppa; apt-get update
       - apt-get install -y openjdk-8-jdk
       - java -version
+      - /var/lib/dpkg/info/ca-certificates-java.postinst configure
   pre_build:
     commands:
       - mkdir ~/.gradle/
