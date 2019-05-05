@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - echo $JAVA_HOME
-      - ls -l /usr/lib/jvm
+      - ls -l /usr/lib/jvm/jre-1.8.0-openjdk-1.8.0.201.b09-2.el7_6.x86_64
   pre_build:
     commands:
       - mkdir ~/.gradle/
