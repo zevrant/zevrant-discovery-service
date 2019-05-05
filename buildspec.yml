@@ -9,6 +9,7 @@ phases:
       - mkdir ~/.gradle/
       - echo cacheUser = $CACHE_USER > ~/.gradle/gradle.properties
       - echo cachePassword = $CACHE_PASSWORD >> ~/.gradle/gradle.properties
+      - systemctl start docker
   build:
     commands:
       - echo Build started on `date`
