@@ -14,6 +14,7 @@ phases:
       - mkdir ~/.gradle/
       - echo cacheUser = $CACHE_USER > ~/.gradle/gradle.properties
       - echo cachePassword = $CACHE_PASSWORD >> ~/.gradle/gradle.properties
+      - DOCKER_LOGIN=`aws ecr get-login --region us-east-1 --no-include-email`; eval $DOCKER_LOGIN
   build:
     commands:
       - echo Build started on `date`
@@ -24,8 +25,6 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
-      - DOCKER_LOGIN=`aws ecr get-login --region us-east-1 --no-include-email`
-      - eval $DOCKER_LOGIN
       - docker push 725235728275.dkr.ecr.us-east-1.amazonaws.com/zevrant-discovery-service:latest
 cache:
   paths:
