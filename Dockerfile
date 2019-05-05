@@ -1,4 +1,4 @@
-FROM zevant-centos-base:latest
+FROM 725235728275.dkr.ecr.us-east-1.amazonaws.com/zevant-centos-base:latest
 
 RUN mkdir -p /usr/local/microservices/zevrant-home-services/zevrant-discovery-service/
 
