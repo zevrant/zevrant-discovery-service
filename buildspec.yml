@@ -23,6 +23,7 @@ phases:
     commands:
       - echo Build completed on `date`
       - docker push 725235728275.dkr.ecr.us-east-1.amazonaws.com/zevrant-discovery-service:latest
+      - send-deploy-notification zevrant-discovery-service
 cache:
   paths:
     - '/root/.gradle/wrapper/**/*'
