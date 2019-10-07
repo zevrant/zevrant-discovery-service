@@ -4,7 +4,7 @@ plugins {
     id 'org.sonarqube' version '2.7'
 }
 
-apply plugin: 'io.spring.dependency-management'
+apply plugin: 'io.spring.dependency-management '
 
 group = 'net.zevrant-services.home.discovery'
 version = '0.0.1-SNAPSHOT'
