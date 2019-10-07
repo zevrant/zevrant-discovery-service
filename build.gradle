@@ -2,9 +2,8 @@ plugins {
     id 'org.springframework.boot' version '2.1.3.RELEASE'
     id 'java'
     id 'org.sonarqube' version '2.7'
+    id "io.spring.dependency-management" version "1.0.8.RELEASE"
 }
-
-apply plugin: 'io.spring.dependency-management '
 
 group = 'net.zevrant-services.home.discovery'
 version = '0.0.1-SNAPSHOT'
