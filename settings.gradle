@@ -13,7 +13,7 @@ buildCache {
 
 buildCache {
     remote(HttpBuildCache) {
-        url = 'https://zevrant-services:5071/'
+        url = 'http://zevrant.ddns.net:5071/'
         allowUntrustedServer = true
         enabled = true
         credentials {
