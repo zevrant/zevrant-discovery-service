@@ -21,10 +21,10 @@ repositories {
     mavenCentral()
 	maven {
 		url "s3://zevrant-security-common"
-		credentials(AwsCredentials) {
-			accessKey = accessKeyProperty
-			secretKey = secretKeyProperty
-		}
+		// credentials(AwsCredentials) {
+		// 	accessKey = accessKeyProperty
+		// 	secretKey = secretKeyProperty
+		// }
 	}
 }
 
@@ -42,10 +42,10 @@ publishing {
     repositories {
         maven {
             url "s3://zevrant-artifact-store/"
-            credentials(AwsCredentials) {
-                accessKey = accessKeyProperty
-                secretKey = secretKeyProperty
-            }
+            // credentials(AwsCredentials) {
+            //     accessKey = accessKeyProperty
+            //     secretKey = secretKeyProperty
+            // }
         }
     }
 }
