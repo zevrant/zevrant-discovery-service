@@ -7,7 +7,7 @@ plugins {
 }
 
 group = 'net.zevrant-services.home.discovery'
-sourceCompatibility = '1.11'
+sourceCompatibility = '1.8'
 
 if(project.hasProperty('projVersion')) {
     project.version = project.projVersion
