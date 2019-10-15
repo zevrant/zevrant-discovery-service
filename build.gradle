@@ -56,8 +56,11 @@ ext {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'de.codecentric:spring-boot-admin-starter-server'
-//    implementation 'org.springframework.cloud:spring-cloud-starter-aws'
+    implementation 'de.codecentric:spring-boot-admin-starter-server:2.1.4'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:2.1.3.RELEASE'
+    implementation 'org.springframework.cloud:spring-cloud-netflix-sidecar:2.1.3.RELEASE'
+
+    implementation 'org.springframework.cloud:spring-cloud-starter-aws:2.1.3.RELEASE'
 //    implementation 'org.springframework.cloud:spring-cloud-starter-aws-jdbc'
 //    implementation 'org.springframework.cloud:spring-cloud-starter-aws-messaging'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
