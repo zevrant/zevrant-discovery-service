@@ -1,0 +1,33 @@
+
+spring:
+  application:
+    name: zevrant-discovery-service
+
+server:
+  servlet:
+    context-path: /zevrant-discovery-service
+
+eureka:
+  client:register-with-eureka: false
+  client:fetch-registry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+  instance:
+    preferIpAddress: true
+    securePortEnabled: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    healthcheck:
+      enabled: true
+
+#sidecar:
+#  port: 8000
+#  health-uri: http://localhost:4200/health.json
+
+logging:
+  level:
+    com:
+      netflix:
+        eureka: OFF
+        discovery: OFF

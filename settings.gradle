@@ -11,14 +11,14 @@ buildCache {
     }
 }
 
-buildCache {
-    remote(HttpBuildCache) {
-        url = 'https://zevrant-services:5071/'
-        allowUntrustedServer = true
-        enabled = true
-        credentials {
-            username = cacheUser
-            password = cachePassword
-        }
-    }
-}
+//buildCache {
+//    remote(HttpBuildCache) {
+//        url = 'https://zevrant-services:5071/'
+//        allowUntrustedServer = true
+//        enabled = true
+//        credentials {
+//            username = cacheUser
+//            password = cachePassword
+//        }
+//    }
+//}
