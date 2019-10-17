@@ -20,7 +20,7 @@ repositories {
     mavenLocal()
     mavenCentral()
 	maven {
-		url "s3://zevrant-security-common"
+		url "s3://zevrant-artifact-store"
 		authentication {
             awsIm(AwsImAuthentication)
         }
@@ -33,7 +33,7 @@ publishing {
     publications {
         myPublication(MavenPublication) {
             groupId 'net.zevrant-services'
-            artifactId 'zevrant-security-common'
+            artifactId 'zevrant-discovery-service'
 
             from components.java
         }
