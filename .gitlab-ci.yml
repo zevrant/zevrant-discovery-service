@@ -40,3 +40,4 @@ imageBuild:
     - 'docker build --build-arg a_version=$VERSION -t zevrant/zevrant-discovery-service:latest zevrant/zevrant-discovery-service:$VERSION .'
     - 'docker push zevrant/zevrant-discovery-service:latest'
     - 'docker push zevrant/zevrant-discovery-service:$VERSION'
+
