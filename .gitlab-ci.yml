@@ -19,7 +19,7 @@ before_script:
   - echo cacheUser = $CACHE_USER > ~/.gradle/gradle.properties
   - echo cachePassword = $CACHE_PASSWORD >> ~/.gradle/gradle.properties
   - DOCKER_LOGIN=`docker login -u $DOCKER_USER -p $DOCKER_PASSWORD`
-  - VERSION=`aws cli
+  - VERSION=`aws cli`
 
 stages:
   - sonarScan
