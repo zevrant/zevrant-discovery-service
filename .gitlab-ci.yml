@@ -1,5 +1,5 @@
 default:
-  image: "zevarnt/zevant-centos-base"
+  image: "evrant/zevrant-centos-base:latest"
 
 #job:
 #  only:
@@ -18,7 +18,7 @@ before_script:
   - mkdir ~/.gradle/
   - echo cacheUser = $CACHE_USER > ~/.gradle/gradle.properties
   - echo cachePassword = $CACHE_PASSWORD >> ~/.gradle/gradle.properties
-  - DOCKER_LOGIN=`aws ecr get-login --region us-east-1 --no-include-email`; eval $DOCKER_LOGIN
+  - DOCKER_LOGIN=`docker login -u $DOCKER_USER -p $DOCKER_PASSWORD`
   - VERSION=`aws cli
 
 stages:
