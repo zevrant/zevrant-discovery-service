@@ -1,4 +1,4 @@
-defaulr:
+default:
   image: "zevarnt/zevant-centos-base"
 
 #job:
