@@ -1,0 +1,43 @@
+defaulr:
+  image: "zevarnt/zevant-centos-base"
+
+#job:
+#  only:
+#    - master@github.com/zevrant/zevrant-discovery-service
+#  extends:
+#  when: delayed
+#  start_in:
+#  rules:
+#    - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "master"'
+#      when: always
+
+
+before_script:
+  - nohup /usr/local/bin/dockerd --host=unix:///var/run/docker.sock --host=tcp://127.0.0.1:2375 --storage-driver=overlay2&
+  - timeout 15 sh -c "until docker info; do echo .; sleep 1; done"
+  - mkdir ~/.gradle/
+  - echo cacheUser = $CACHE_USER > ~/.gradle/gradle.properties
+  - echo cachePassword = $CACHE_PASSWORD >> ~/.gradle/gradle.properties
+  - DOCKER_LOGIN=`aws ecr get-login --region us-east-1 --no-include-email`; eval $DOCKER_LOGIN
+  - VERSION=`aws cli
+
+stages:
+  - sonarScan
+  - test
+  - imageBuild
+
+sonarScan:
+  stage: sonarScan
+  script: bash gradlew sonar
+
+test:
+  stage: test
+  script: bash gradlew test
+
+imageBuild:
+  stage: imageBuild
+  script:
+    - 'docker build --build-arg a_version=$VERSION -t zevrant/zevrant-discovery-service:latest zevrant/zevrant-discovery-service:$VERSION .'
+    - 'docker push zevrant/zevrant-discovery-service:latest'
+    - 'docker push zevrant/zevrant-discovery-service:$VERSION'
+
